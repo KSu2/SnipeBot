@@ -38,6 +38,7 @@ namespace HenryMod.Modules
                 Log.Error("AssetBundle name hasn't been changed. not loading any assets to avoid conflicts");
                 return;
             }
+
             LoadAssetBundle();
             LoadSoundbank();
             PopulateAssets();
@@ -168,7 +169,6 @@ namespace HenryMod.Modules
 
         public static GameObject LoadSurvivorModel(string modelName) {
             GameObject model = mainAssetBundle.LoadAsset<GameObject>(modelName);
-
             if (model == null) {
                 Log.Error("Trying to load a null model- check to see if the BodyName in your code matches the prefab name of the object in Unity\nFor Example, if your prefab in unity is 'mdlHenry', then your BodyName must be 'Henry'");
                 return null;

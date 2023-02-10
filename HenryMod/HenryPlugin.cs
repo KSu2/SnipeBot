@@ -1,6 +1,5 @@
 ﻿using BepInEx;
 using HenryMod.Modules.Survivors;
-using R2API;
 using R2API.Utils;
 using RoR2;
 using System.Collections.Generic;
@@ -16,7 +15,14 @@ namespace HenryMod
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
-    [R2APISubmoduleDependency(nameof(LanguageAPI), nameof(PrefabAPI))]
+    [R2APISubmoduleDependency(new string[]
+    {
+        "PrefabAPI",
+        "LanguageAPI",
+        "SoundAPI",
+        "UnlockableAPI"
+    })]
+
     public class HenryPlugin : BaseUnityPlugin
     {
         // if you don't change these you're giving permission to deprecate the mod-

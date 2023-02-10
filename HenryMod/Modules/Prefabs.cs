@@ -49,7 +49,6 @@ namespace HenryMod.Modules {
 
                     modelBaseTransform = AddCharacterModelToSurvivorBody(newBodyPrefab, model.transform, bodyInfo);
             }
-            Log.Debug(model);
 
             #region CharacterBody
             CharacterBody bodyComponent = newBodyPrefab.GetComponent<CharacterBody>();
